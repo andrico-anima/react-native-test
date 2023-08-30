@@ -73,9 +73,8 @@ const styles = StyleSheet.create({
     height: 40,
   },
   label: {
-    fontFamily: "Poppins",
+    fontFamily: "Poppins_700Bold",
     fontSize: 14,
-    fontWeight: 700,
     letterSpacing: 0,
     lineHeight: 24,
     position: "relative",

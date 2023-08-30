@@ -3,8 +3,9 @@ import { StyleSheet, ImageBackground } from "react-native";
 export const UserThumbnail = ({ size, user, style }) => {
   return (
     <ImageBackground
-      style={[styles[size], style]}
-      imageStyle={[styles.image, styles[size], style]}
+      style={[styles[size]]}
+      imageStyle={[styles[size]]}
+      resizeMode="cover"
       source={imagePaths[user].backgroundImage}
     ></ImageBackground>
   );
@@ -44,9 +45,6 @@ const imagePaths = {
 };
 
 const styles = StyleSheet.create({
-  image: {
-    resizeMode: "cover",
-  },
   large: {
     borderRadius: 88.24,
     height: 150,

@@ -19,7 +19,7 @@ export const UserCard = ({
     <View style={[styles.userCard, styles[cardClass]]}>
       {["large", "medium"].includes(size) ? (
         <Fragment>
-          <UserThumbnail size={size === 'medium' ? 'large' : 'huge'} user={userThumbnailUser} style={`${size === 'medium' ? styles.userThumbnailInstance : styles.userThumbnailClass}`} />
+          <UserThumbnail size={size === 'medium' ? 'large' : 'huge'} user={userThumbnailUser} style={size === 'medium' ? styles.userThumbnailInstance : styles.userThumbnailClass} />
           <View style={[styles[socialIconsClass], styles.textSocialIcons]}>
             <Text style={styles.title}>{username}</Text>
             <View style={styles.titleDescription}>
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
   title: {
     alignSelf: 'stretch',
     color: '#000000', // Update to the correct color value
-    fontFamily: 'Mulish',
+    fontFamily: 'Mulish_700Bold',
     fontSize: 18,
     fontWeight: '700',
     letterSpacing: 0,
@@ -92,9 +92,8 @@ const styles = StyleSheet.create({
   description: {
     alignSelf: 'stretch',
     color: '#2d2d2d',
-    fontFamily: 'Mulish',
+    fontFamily: 'Mulish_400Regular',
     fontSize: 12,
-    fontWeight: '400',
     letterSpacing: 0,
     lineHeight: 19.2,
     textAlign: 'center',
@@ -116,7 +115,7 @@ const styles = StyleSheet.create({
   userName: {
     color: '#000000', // Update to the correct color value
     flex: 1,
-    fontFamily: 'Mulish',
+    fontFamily: 'Mulish_700Bold',
     fontSize: 18,
     fontWeight: '700',
     letterSpacing: 0,
@@ -125,9 +124,8 @@ const styles = StyleSheet.create({
   textWrapper: {
     alignSelf: 'stretch',
     color: '#2d2d2d',
-    fontFamily: 'Mulish',
+    fontFamily: 'Mulish_400Regular',
     fontSize: 12,
-    fontWeight: '400',
     letterSpacing: 0,
     lineHeight: 19.2,
   },

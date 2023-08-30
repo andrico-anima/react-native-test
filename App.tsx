@@ -2,15 +2,19 @@ import { StatusBar } from "expo-status-bar";
 import { Platform, StyleSheet, View } from "react-native";
 import { HomepageDesktop } from "./screens/HomepageDesktop";
 import * as SplashScreen from "expo-splash-screen";
+
 import { useFonts } from "expo-font";
 import { useCallback } from "react";
+import { Mulish_400Regular, Mulish_700Bold } from "@expo-google-fonts/mulish";
+import { Poppins_700Bold } from "@expo-google-fonts/poppins";
 
 SplashScreen.preventAutoHideAsync();
 
 export default function App() {
   const [fontsLoaded] = useFonts({
-    Mulish: "https://fonts.googleapis.com/css?family=Mulish:400,800",
-    Poppins: "https://fonts.googleapis.com/css?family=Poppins:400",
+    Mulish_400Regular,
+    Mulish_700Bold,
+    Poppins_700Bold,
   });
 
   const onLayoutRootView = useCallback(async () => {

@@ -11,7 +11,7 @@ import { Poppins_700Bold } from "@expo-google-fonts/poppins";
 SplashScreen.preventAutoHideAsync();
 
 export default function App() {
-  const [fontsLoaded] = useFonts({
+  const [fontsLoaded, fontsError] = useFonts({
     Mulish_400Regular,
     Mulish_700Bold,
     Poppins_700Bold,
@@ -23,7 +23,7 @@ export default function App() {
     }
   }, [fontsLoaded]);
 
-  if (!fontsLoaded && Platform.OS !== "web") {
+  if (!fontsLoaded && !fontsError) {
     return null;
   }
 

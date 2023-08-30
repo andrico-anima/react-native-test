@@ -3,14 +3,12 @@ import { View, StyleSheet, Text } from 'react-native';
 import { UserThumbnail } from './UserThumbnail';
 import { PrimaryButton } from './PrimaryButton';
 import { convertToCamelCase } from '../utilities/convertToCamelCase';
-import { Icon2 } from '../icons/Icon2';
 
 export const UserCard = ({
   userThumbnailUser = 'sebastian',
   size = 'medium',
   description = "Sebastian creates circles and squares that actually make you want to interact with them.",
   username = "User Name",
-  primaryButton = <Icon2 className={styles.icon2} />,
   primaryButtonText = "Get Started",
   primaryButtonShowIcon,
 }) => {

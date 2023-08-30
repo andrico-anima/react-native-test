@@ -1,9 +1,13 @@
 import { useReducer } from "react";
-import { Pressable, Text, View, StyleSheet } from "react-native"
-import { primaryColor, secondaryColor, grey1Color, grey2Color } from '../styleguide'
+import { Pressable, Text, StyleSheet } from "react-native";
+import {
+  primaryColor,
+  secondaryColor,
+  grey1Color,
+  grey2Color,
+} from "../styleguide";
 import { convertToCamelCase } from "../utilities/convertToCamelCase";
 import { Icon } from "./Icon";
-
 
 function reducer(state: any, action: any) {
   switch (action) {
@@ -29,51 +33,57 @@ export const PrimaryButton = ({
   stateProp,
   type,
   override = <Icon name="arrow-right" />,
-  style,
+  style = {},
 }) => {
   const [state, dispatch] = useReducer(reducer, {
-    state: stateProp || 'default',
-    type: type || 'primary'
-  })
+    state: stateProp || "default",
+    type: type || "primary",
+  });
 
-  const buttonClass = convertToCamelCase(state.state, state.type)
-  const labelClass = convertToCamelCase(state.state, state.type, 'label')
+  const buttonClass = convertToCamelCase(state.state, state.type);
+  const labelClass = convertToCamelCase(state.state, state.type, "label");
 
   return (
-    <Pressable onHoverIn={() => dispatch('mouse_enter')} onHoverOut={() => dispatch('mouse_leave')} style={[styles.primaryButton, styles[buttonClass], style]}>
-      <Text numberOfLines={1} style={[styles.label, styles[labelClass]]}>{text}</Text>
+    <Pressable
+      onHoverIn={() => dispatch("mouse_enter")}
+      onHoverOut={() => dispatch("mouse_leave")}
+      style={[styles.primaryButton, styles[buttonClass], style]}
+    >
+      <Text numberOfLines={1} style={[styles.label, styles[labelClass]]}>
+        {text}
+      </Text>
       {showIcon ? override : null}
     </Pressable>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   primaryButton: {
-    alignItems: 'center',
+    alignItems: "center",
     borderRadius: 8,
-    display: 'flex',
+    display: "flex",
     gap: 8,
-    flexDirection: 'row',
-    justifyContent: 'center',
+    flexDirection: "row",
+    justifyContent: "center",
     paddingHorizontal: 20,
-    position: 'relative',
-    transitionProperty: 'all',
-    transitionDuration: '0.3s',
-    transitionTimingFunction: 'ease',
+    position: "relative",
+    transitionProperty: "all",
+    transitionDuration: "0.3s",
+    transitionTimingFunction: "ease",
     height: 40,
   },
   label: {
-    fontFamily: 'Poppins',
+    fontFamily: "Poppins",
     fontSize: 14,
     fontWeight: 700,
     letterSpacing: 0,
     lineHeight: 24,
-    position: 'relative',
-    width: 'auto',
+    position: "relative",
+    width: "auto",
   },
   secondary: {
-    backgroundColor: '#ffffff',
-    border: '1px solid',
+    backgroundColor: "#ffffff",
+    border: "1px solid",
   },
   defaultSecondary: {
     borderColor: primaryColor,
@@ -97,7 +107,7 @@ const styles = StyleSheet.create({
     color: primaryColor,
   },
   hoverPrimaryLabel: {
-    color: '#ffffff',
+    color: "#ffffff",
   },
   disabledPrimaryLabel: {
     color: grey2Color,
@@ -106,10 +116,9 @@ const styles = StyleSheet.create({
     color: secondaryColor,
   },
   defaultPrimaryLabel: {
-    color: '#ffffff',
+    color: "#ffffff",
   },
   disabledSecondaryLabel: {
     color: grey1Color,
   },
 });
-

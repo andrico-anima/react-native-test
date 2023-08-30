@@ -2,7 +2,7 @@ import React from "react";
 import Svg, { Path } from "react-native-svg";
 
 interface Props {
-  className: any;
+  style: any;
 }
 
 export const Icon2 = ({ style }: Props): JSX.Element => {
@@ -13,10 +13,8 @@ export const Icon2 = ({ style }: Props): JSX.Element => {
       height="20"
       viewBox="0 0 20 20"
       width="20"
-      xmlns="http://www.w3.org/2000/svg"
     >
       <Path
-        className="path"
         d="M3.125 10H16.875M16.875 10L11.25 4.375M16.875 10L11.25 15.625"
         stroke="white"
         strokeLinecap="round"
